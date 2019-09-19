@@ -51,7 +51,7 @@ Dog fido = new Beagle();
 In this case, `fido` has static type `Dog` and dynamic type `Beagle`. One general rule is that **the dynamic type must be equal to or be a "sub-category" of the static type**. In this example, a `Beagle` is a `Dog`, so this is valid. The dynamic type can also be a `Dog` (`Dog fido = new Dog();`), since a `Dog` is a `Dog`. However, the dynamic type cannot be an `Animal` (`Dog fido = new Animal();`), since an `Animal` isn't necessarily a `Dog`. This will lead to a compile-time error.
 
 ### Method Signature
-We often use method signatures to compare if two functions are similar. We say that the *method signature* of a function is its name, the number of its arguments, the order of its arguments, and the types of its arguments. Note that return value type and the name of the arguments do *not* matter.
+We often use method signatures to compare if two functions are similar. We say that the *method signature* of a function is its name, the number of its arguments, the order of its arguments, and the types of its arguments. Note that return value type and the name of the arguments do *not* matter. 
 
 ### Combining Concepts
 Let's walk through what exactly happens when you run a Java program:
@@ -61,6 +61,8 @@ Let's walk through what exactly happens when you run a Java program:
     
     In addition to static type checking, the compiler also chooses the *method signature* to run when runtimes comes. 
 - Runtime: At runtime, Java chooses which exact method to run. Because the method signature was already chosen at compile-time, at runtime, Java is mainly just deciding which class to run the method from. This is called **dynamic method selection**. Java first starts at the dynamic type class and sees if the previously chosen method signature is in that class (in the example above, it checks if `Beagle` has a function with the same method signature as `bark(int a);`). If so, then it runs that method, otherwise, it continues going up to the next superclass and checks, doing so until it reaches the static type class. Because we know that the static type class *must* have a method with the same method signature (this was our second check at compile-time), this ensures that Java shouldn't crash!
+
+Note: When checking method signatures, specifically when checking the argument types, superclasses are allowed as well (sorry for being confusing lol). For example, when we're checking `Beagle` for a method signature of `bark(Beagle b);`, if `Beagle` doesn't have a method `bark(Beagle b);` but has a method `bark(Dog d);`, it will end up running `bark(Dog d);` (since a `Beagle` is a `Dog`!).
 
 > TLDR; Method signatures are chosen at compile-time. Which class to run the method is chosen at runtime.
 
