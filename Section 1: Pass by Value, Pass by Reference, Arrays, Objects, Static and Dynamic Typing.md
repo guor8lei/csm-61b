@@ -62,7 +62,7 @@ Let's walk through what exactly happens when you run a Java program:
     In addition to static type checking, the compiler also chooses the *method signature* to run when runtimes comes. 
 - Runtime: At runtime, Java chooses which exact method to run. Because the method signature was already chosen at compile-time, at runtime, Java is mainly just deciding which class to run the method from. This is called **dynamic method selection**. Java first starts at the dynamic type class and sees if the previously chosen method signature is in that class (in the example above, it checks if `Beagle` has a function with the same method signature as `bark(int a);`). If so, then it runs that method, otherwise, it continues going up to the next superclass and checks, doing so until it reaches the static type class. Because we know that the static type class *must* have a method with the same method signature (this was our second check at compile-time), this ensures that Java shouldn't crash!
 
-> TLDR; *Method signatures* are chosen at compile-time. Which class to run the method is chosen at runtime.
+> TLDR; Method signatures are chosen at compile-time. Which class to run the method is chosen at runtime.
 
 ### General workflow when doing these types of problems
 1. Static type checking: Ensure that the dynamic type of the object matches its static type, meaning that it's either equal to or a sub-category of the static type. If not, compile-time error.
