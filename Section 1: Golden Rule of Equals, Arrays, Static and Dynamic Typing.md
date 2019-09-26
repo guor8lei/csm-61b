@@ -1,7 +1,7 @@
 # Section 1: Golden Rule of Equals, Arrays, Static and Dynamic Typing
 Raymond Guo
 
-Note: I'm a little rusty in 61B and actually relearning with y'all :). These are just my personal notes, so there may be errors in this document; if so, let me know!
+Disclaimer: I'm a little rusty in 61B and actually relearning with y'all :). These are just my personal notes, so there may be errors in this document; if so, let me know! Also, this isn't affilianted with CSM or any Berkeley organization :).
 
 ## Golden Rule of Equals (Q1)
 In Java, there are two types of data types (of variables): 
