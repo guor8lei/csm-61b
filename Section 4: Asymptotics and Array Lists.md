@@ -102,7 +102,8 @@ Now, we just need to sum all the levels up: `2^0 + 2^1 + 2^2 + ... 2^n = 1 + 2 +
 
 ## Array Lists (Q3)
 In this class, we'll mainly be dealing with two types of lists: linked lists and array lists. As we learned before, linked lists are essentially nodes that are connected to each other through a `next` pointer. Array lists, on the other hand, are lists that are in essence arrays "behind-the-scenes" -- behind every array list lies an array. 
-![image not appearing](https://i.stack.imgur.com/skN72.png)
+
+![image not appearing](https://dzone.com/storage/temp/895349-arraylist-linkedlistt.png)
 
 The biggest functionality that an array list has that an array doesn't is the ability to add elements. Arrays aren't able to do this because they aren't resizeable. Thus, in order to overcome this, whenever the underlying array of an array list becomes full and a new element is inserted, the array list goes through a resizing procedure:
 1. Make a new array with double the size.
@@ -112,4 +113,5 @@ The biggest functionality that an array list has that an array doesn't is the ab
  The advantage of linked lists is that it makes appending to the beginning / end of the list extreme fast (`O(1)` time). Removing is also a lot faster for linked lists. However, array lists are very fast at retrieving elements at a specified index (`O(1)` time), whereas linked lists have to iterate through every node from the beginning to reach the right index before returning the value (`O(n) time`). 
  
  Here's the runtimes for linked list, array, and array list (called dynamic array below):
+ 
  ![image not appearing](https://i.stack.imgur.com/Ly4Fp.jpg)
