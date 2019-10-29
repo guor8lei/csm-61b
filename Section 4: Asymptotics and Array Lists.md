@@ -29,6 +29,7 @@ More generally, the mathematical definition of Big Omega is:
 R(N) ∈ Ω(f(N)) → ∃ k, k ⋅ f(N) ≤ R(N)
 
 Visually, this means that the the runtime of the algorithm is always "above" f(N).
+
 ![image not appearing](https://cdn.kastatic.org/ka-perseus-images/c02e6916d15bacae7a936381af8c6e5a0068f4fd.png)
 
 ### Big O
@@ -39,6 +40,7 @@ The mathematical definition of Big O is:
 R(N) ∈ O(f(N)) → ∃ k, k ⋅ f(N) ≥ R(N)
 
 Visually, this means that the the runtime of the algorithm is always "below" f(N).
+
 ![image not appearing](https://cdn.kastatic.org/ka-perseus-images/501211c02f4c6765f60f23842450e1151cfd9c89.png)
 
 ### Big Theta (Θ)
@@ -51,6 +53,7 @@ The mathematical definition of Big Theta is:
 R(N) ∈ Θ(f(N)) → ∃ k_1, k_2, k_1 ⋅ f(N) ≤ R(N) ≤ k_2 ⋅ f(N)
 
 Visually, this means that the the runtime of the algorithm is always "below" f(N).
+
 ![image not appearing](https://cdn.kastatic.org/ka-perseus-images/2bdc25c7eda8486d05b8031c5a63535684ecb5a1.png)
 
 ### Calculating Runtime - Iterative Algorithms
@@ -99,7 +102,7 @@ Now, we just need to sum all the levels up: `2^0 + 2^1 + 2^2 + ... 2^n = 1 + 2 +
 
 ## Array Lists (Q3)
 In this class, we'll mainly be dealing with two types of lists: linked lists and array lists. As we learned before, linked lists are essentially nodes that are connected to each other through a `next` pointer. Array lists, on the other hand, are lists that are in essence arrays "behind-the-scenes" -- behind every array list lies an array. 
-![image not appearing](data:image/png;base64,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)
+![image not appearing](https://i.stack.imgur.com/skN72.png)
 
 The biggest functionality that an array list has that an array doesn't is the ability to add elements. Arrays aren't able to do this because they aren't resizeable. Thus, in order to overcome this, whenever the underlying array of an array list becomes full and a new element is inserted, the array list goes through a resizing procedure:
 1. Make a new array with double the size.
